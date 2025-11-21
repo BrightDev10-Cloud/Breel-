@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breel - Student Portal</title>
+    <meta name="description" content="Track your academic performance with detailed exam results, subject grades, and performance analytics">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Logo.svg">
+    
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@1.2.1/src/regular/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-links-left">
+            <a href="#" class="nav-link active">Home</a>
+            <a href="#" class="nav-link">Subjects</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Become an Instructor</a>
+        </div>
+        <div class="nav-links-right">
+            <select class="currency-select">
+                <option>USD</option>
+                <option>EUR</option>
+                <option>GBP</option>
+            </select>
+            <select class="language-select">
+                <option>English</option>
+                <option>Spanish</option>
+                <option>French</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="Logo.svg" alt="E-tutor Logo" class="logo-img">
+                    <span>Breel</span>
+                </div>
+                <div class="browse-dropdown">
+                    <button class="browse-btn">
+                        <span>Browse</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                </div>
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="search" placeholder="What do you want to learn...">
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <img src="assets/Bell.svg" alt="Notifications" class="icon-img">
+                </button>
+                <button class="icon-btn" aria-label="Favorites">
+                    <img src="assets/Heart.svg" alt="Favorites" class="icon-img">
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <img src="assets/ShoppingCartSimple.svg" alt="Cart" class="icon-img">
+                    <span class="cart-badge">2</span>
+                </button>
+                <div class="user-avatar">
+                    <img src="assets/Avatar-real_style.png" alt="User Avatar">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Toggle for Mobile -->
+    <button class="menu-toggle" id="menuToggle">
+        <i class="ph ph-list"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" data-tab="dashboard">
+                <i class="ph ph-house"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link" data-tab="subjects">
+                <i class="ph ph-books"></i>
+                <span>My Subjects</span>
+            </a>
+            <a href="#" class="sidebar-link" data-tab="exams">
+                <i class="ph ph-file-text"></i>
+                <span>Exams</span>
+            </a>
+            <a href="#" class="sidebar-link" data-tab="performance">
+                <i class="ph ph-chart-line"></i>
+                <span>Performance</span>
+            </a>
+            <a href="#" class="sidebar-link" data-tab="schedule">
+                <i class="ph ph-calendar"></i>
+                <span>Schedule</span>
+            </a>
+            <a href="#" class="sidebar-link" data-tab="settings">
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Profile Banner -->
+        <section class="profile-banner">
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img src="assets/Avatar-real_style.png" alt="Student Avatar">
+                </div>
+                <div class="profile-details">
+                    <h1 class="profile-name">Abdulazeez Bright</h1>
+                    <p class="profile-subtitle">Computer Science Major • Dean's List Student</p>
+                </div>
+            </div>
+            <button class="btn-primary">
+                <span>View Transcript</span>
+                <i class="ph ph-arrow-right"></i>
+            </button>
+        </section>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-navigation">
+            <a href="#" class="tab-link active" data-content="dashboard">Dashboard</a>
+            <a href="#" class="tab-link" data-content="subjects">Subjects</a>
+            <a href="#" class="tab-link" data-content="exams">Exams</a>
+            <a href="#" class="tab-link" data-content="performance">Performance</a>
+            <a href="#" class="tab-link" data-content="schedule">Schedule</a>
+            <a href="#" class="tab-link" data-content="history">Exam History</a>
+            <a href="#" class="tab-link" data-content="settings">Settings</a>
+        </nav>
+
+        <!-- Dashboard Title -->
+        <div class="content-header">
+            <h2 class="content-title">Dashboard</h2>
+        </div>
+
+        <!-- Stats Cards -->
+        <section class="stats-grid">
+            <div class="stat-card stat-peach">
+                <div class="stat-info">
+                    <h3 class="stat-number">12</h3>
+                    <p class="stat-label">Enrolled Subjects</p>
+                </div>
+            </div>
+
+            <div class="stat-card stat-purple">
+                <div class="stat-info">
+                    <h3 class="stat-number">8</h3>
+                    <p class="stat-label">Active Exams</p>
+                </div>
+            </div>
+
+            <div class="stat-card stat-green">
+                <div class="stat-info">
+                    <h3 class="stat-number">34</h3>
+                    <p class="stat-label">Completed Exams</p>
+                </div>
+            </div>
+
+            <div class="stat-card stat-orange">
+                <div class="stat-info">
+                    <h3 class="stat-number">4.8</h3>
+                    <p class="stat-label">GPA Average</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subject Grades Section -->
+        <section class="grades-section">
+            <div class="section-header">
+                <h2 class="section-title">My Subjects & Grades</h2>
+                <div class="section-actions">
+                    <button class="nav-arrow">
+                        <i class="ph ph-caret-left"></i>
+                    </button>
+                    <button class="nav-arrow">
+                        <i class="ph ph-caret-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="subjects-grid" id="subjectsGrid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Performance Summary & Detailed Grades -->
+        <section class="analytics-section">
+            <div class="analytics-grid">
+                <!-- Performance Summary Card -->
+                <div class="card performance-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Performance Summary</h3>
+                        <select class="filter-select">
+                            <option>This Semester</option>
+                            <option>Last Semester</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <div class="performance-chart" id="performanceChart">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Grades Table -->
+                <div class="card grades-table-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Detailed Grade Report</h3>
+                        <select class="filter-select">
+                            <option>All Subjects</option>
+                            <option>Passed</option>
+                            <option>In Progress</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="grades-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Credits</th>
+                                        <th>Midterm</th>
+                                        <th>Final</th>
+                                        <th>Grade</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="gradesTableBody">
+                                    <!-- Will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="Logo.svg" alt="E-tutor Logo" class="logo-img">
+                    <span>Breel</span>
+                </div>
+                <p class="footer-description">
+                    Aliquam rhoncus ligula est, non pulvinar elit convallis nec. Donec mattis odio at.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <img src="social-links/Faceboook.svg" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="social-links/Instragarm.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="social-links/Linkedin.svg" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="social-links/Twitter.svg" alt="Twitter" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="social-links/Youtube.svg" alt="YouTube" class="social-icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Top 4 Category</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Finance & Accounting</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Business</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Become Instructor</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Download Our App</h4>
+                <div class="app-downloads">
+                    <a href="#" class="app-btn">
+                        <img src="assets/apple_icon.png" alt="Apple" class="app-icon">
+                        <div>
+                            <span class="app-store-label">Download on the</span>
+                            <span class="app-store-name">App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <img src="assets/google-play.png" alt="Google Play" class="app-icon">
+                        <div>
+                            <span class="app-store-label">Get it on</span>
+                            <span class="app-store-name">Play Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 - Breel. Designed Abdulazeez. All rights reserved</p>
+            <select class="language-select-footer">
+                <option>English</option>
+                <option>Spanish</option>
+                <option>French</option>
+            </select>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
